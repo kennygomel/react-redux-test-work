@@ -9,10 +9,10 @@ export interface ContactModel {
     dateOfBirth: string;
 }
 
-export interface FetchContactsProps extends WithCallback {
+export interface FetchAllContactsProps extends WithCallback {
 }
 
-export interface FetchContactProps extends WithCallback {
+export interface FetchSingleContactProps extends WithCallback {
     id: number;
 }
 

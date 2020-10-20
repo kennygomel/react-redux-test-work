@@ -3,8 +3,8 @@ import { FetchStatus } from '../../models/fetchStatus.model';
 import {
     ContactModel,
     DeleteContactProps,
-    FetchContactProps,
-    FetchContactsProps,
+    FetchAllContactsProps,
+    FetchSingleContactProps,
     SaveContactProps,
 } from '../../models/contact.model';
 import { withStatusReducers } from '../withStatusReducers';
@@ -63,8 +63,8 @@ const orderSlice = createSlice({
     },
 });
 
-const fetchAllContacts = createAction<FetchContactsProps>('contact/fetchAllContacts');
-const fetchSingleContact = createAction<FetchContactProps>('contact/fetchSingleContact');
+const fetchAllContacts = createAction<FetchAllContactsProps>('contact/fetchAllContacts');
+const fetchSingleContact = createAction<FetchSingleContactProps>('contact/fetchSingleContact');
 const saveContact = createAction<SaveContactProps>('contact/saveContact');
 const deleteContact = createAction<DeleteContactProps>('contact/deleteContact');
 
