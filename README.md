@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Form Component
+
+[Documentation](https://github.com/kennygomel/react-redux-test-work/blob/master/src/shared/form/README.md)
+
 ## Available Scripts
 
 In the project directory, you can run:
