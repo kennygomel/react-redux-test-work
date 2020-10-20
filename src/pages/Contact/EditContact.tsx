@@ -3,14 +3,12 @@ import { connect } from 'react-redux';
 import { actions } from '../../store/contact/contact.reducer';
 import { singleContactSelector } from '../../store/contact/contact.selector';
 import { FormattedMessage } from 'react-intl';
-import { FormFieldType } from '../../shared/form/models/formField.model';
 import BaseForm from '../../shared/form/BaseForm';
 import styles from '../../styles';
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
-import moment from 'moment';
-import { DATE_FORMAT } from '../../constants';
 import { routes } from '../../router/routes';
 import { useHistory } from 'react-router-dom';
+import { getFormFields } from './formConfigs/editContact';
 
 
 type IStateToProps = ReturnType<typeof mapStateToProps>;
@@ -47,48 +45,8 @@ const EditContactPage: React.FC<IProps> = props => {
     }, [contactId, fetchSingleContact, clearSingleContact]);
 
 
-    const getFormFields = () => ([
-        {
-            label: <FormattedMessage id="label.first_name"/>,
-            type: FormFieldType.TEXT,
-            initialValue: contact?.firstName || '',
-            name: 'firstName',
-            required: true,
-        },
-        {
-            label: <FormattedMessage id="label.last_name"/>,
-            type: FormFieldType.TEXT,
-            initialValue: contact?.lastName || '',
-            name: 'lastName',
-            required: true,
-        },
-        {
-            label: <FormattedMessage id="label.email"/>,
-            type: FormFieldType.EMAIL,
-            initialValue: contact?.email || '',
-            name: 'email',
-            required: true,
-            fullWidth: true,
-        },
-        {
-            label: <FormattedMessage id="label.phone"/>,
-            type: FormFieldType.TEL,
-            initialValue: contact?.phone || '',
-            name: 'phone',
-            required: true,
-            fullWidth: true,
-        },
-        {
-            label: <FormattedMessage id="label.dob"/>,
-            type: FormFieldType.DATE,
-            initialValue: contact?.dateOfBirth ? moment(contact.dateOfBirth, DATE_FORMAT) : moment(),
-            name: 'dateOfBirth',
-            fullWidth: true,
-        },
-    ]);
-
     const getFormOptions = () => ({
-        fields: getFormFields(),
+        fields: getFormFields(contact),
         isValidOnLoad: !!contactId,
         onCancel: () => {
             history.push(routes.contacts.to);
@@ -103,8 +61,8 @@ const EditContactPage: React.FC<IProps> = props => {
                 },
             });
         },
-        // cancelLabel: <FormattedMessage id="general.cancel"/>,
-        // submitLabel: <FormattedMessage id="general.save"/>,
+        cancelLabel: <FormattedMessage id="general.cancel"/>,
+        submitLabel: <FormattedMessage id="general.save"/>,
     });
 
     return (

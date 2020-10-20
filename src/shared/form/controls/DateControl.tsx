@@ -34,7 +34,7 @@ const DateControl: React.FC<IProps> = props => {
 
     useEffect(() => {
         processControl(initialValue);
-    // eslint-disable-next-line
+        // eslint-disable-next-line
     }, []);
 
     const processControl = (newValue: MaterialUiPickersDate) => {

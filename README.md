@@ -1,5 +1,7 @@
 # Application start
 
+*Demo*:  https://react-redux-test-work.herokuapp.com/
+
 To start the project please follow the next steps:
 - clone repository on your local machine
 - in root folder run `yarn install` (Make sure that you have installed `yarn`. How to install yarn?)

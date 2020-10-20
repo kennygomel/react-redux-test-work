@@ -21,11 +21,12 @@ const BaseForm: React.FC<IProps> = props => {
         options: {
             fields,
             onSubmit,
-            onCancel = () => {},
+            onCancel = () => {
+            },
             isValidOnLoad = false,
             cancelLabel = 'Cancel',
-            submitLabel = 'Ok'
-        }
+            submitLabel = 'Ok',
+        },
     } = props;
     const reduceFormFieldsToFormData = (acc: FormData, field: FormField) => {
         acc[field.name] = {
