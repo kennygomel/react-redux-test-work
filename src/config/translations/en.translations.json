@@ -1,0 +1,20 @@
+{
+  "contact.single": "Contact",
+  "contact.list": "Contacts",
+  "contact.not_found": "Contacts not found",
+  "contact.add": "Add contact",
+  "contact.edit": "Edit contact",
+  "contact.new": "New contact",
+  "error.general.required": "Field is required",
+  "general.cancel": "Cancel",
+  "general.ok": "Ok",
+  "general.save": "Save",
+  "general.submit": "Submit",
+  "label.id": "ID",
+  "label.first_name": "First Name",
+  "label.last_name": "Last Name",
+  "label.phone": "Phone Number",
+  "label.email": "E-Mail",
+  "label.dob": "Date of Birth",
+  "label.actions": "Acions"
+}
